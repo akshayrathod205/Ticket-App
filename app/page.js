@@ -2,7 +2,7 @@ import TicketCard from "./[components]/TicketCard";
 
 const Dashboard = () => {
   return (
-    <div>
+    <div className="p-5">
       <TicketCard />
     </div>
   );
