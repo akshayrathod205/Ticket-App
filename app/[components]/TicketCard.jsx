@@ -1,4 +1,5 @@
 import DeleteBlock from "./DeleteBlock";
+import Field from "./Field";
 
 const TicketCard = () => {
   return (
@@ -6,30 +7,15 @@ const TicketCard = () => {
       <div className="place-self-end">
         <DeleteBlock />
       </div>
-      <div className="flex flex-col px-4 space-y-2">
+      <div className="flex flex-col px-4 py-2">
         <div className="grid grid-cols-2">
-          <p className="text-default-text">Title</p>
-          <p className="text-default-text">Lorem, ipsum dolor.</p>
+          <Field label="Title" value="Lorem, ipsum dolor." />
+          <Field label="Deadline" value="Lorem, ipsum dolor." />
+          <Field label="Status" value="Completed" />
+          <Field label="Priority" value="Urgent" />
+          <Field label="Created By" value="Akshay" />
+          <Field label="Assigned To" value="Deep" />
         </div>
-        <div className="grid grid-cols-2">
-          <p className="text-default-text">Description</p>
-          <p className="text-default-text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Repellendus, et.
-          </p>
-        </div>
-        <div className="grid grid-cols-2">
-          <p className="text-default-text">Status</p>
-          <p className="text-default-text">Completed</p>
-        </div>
-        <div className="grid grid-cols-2">
-          <p className="text-default-text">Priority</p>
-          <p className="text-default-text">Urgent</p>
-        </div>
-      </div>
-      <div className="flex flex-col px-4">
-        <p className="text-default-text">Created By</p>
-        <p className="text-default-text">Assigned To</p>
       </div>
     </div>
   );
