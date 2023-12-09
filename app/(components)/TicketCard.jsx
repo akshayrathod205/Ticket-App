@@ -4,12 +4,12 @@ import Field from "./Field";
 const TicketCard = () => {
   return (
     <div className="flex flex-col w-[400px] h-auto space-y-4 p-5 border rounded-md shadow-md">
-      <div className="place-self-end">
+      <div className="flex justify-between px-4">
+        <Field label="Lorem, ipsum dolor." />
         <DeleteBlock />
       </div>
       <div className="flex flex-col px-4 py-2">
         <div className="grid grid-cols-2">
-          <Field label="Title" value="Lorem, ipsum dolor." />
           <Field label="Deadline" value="Lorem, ipsum dolor." />
           <Field label="Status" value="Completed" />
           <Field label="Priority" value="Urgent" />
