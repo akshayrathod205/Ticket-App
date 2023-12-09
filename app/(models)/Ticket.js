@@ -14,7 +14,7 @@ const TicketSchema = new Schema(
       required: true,
     },
     deadline: {
-      type: Date,
+      type: String,
       required: true,
     },
     status: {
@@ -32,12 +32,6 @@ const TicketSchema = new Schema(
     createdBy: {
       type: String,
       required: true,
-    },
-    createdAt: {
-      type: Date,
-    },
-    updatedAt: {
-      type: Date,
     },
   },
   { timestamps: true }
