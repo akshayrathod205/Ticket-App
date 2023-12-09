@@ -16,9 +16,12 @@ const TicketForm = ({ params }) => {
   });
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    const updatedValue =
+      name === "deadline" ? new Date(value).toISOString().split("T")[0] : value;
     setFormData((prevData) => ({
       ...prevData,
-      [e.target.name]: e.target.value,
+      [name]: updatedValue,
     }));
   };
 
@@ -76,7 +79,7 @@ const TicketForm = ({ params }) => {
             onChange={handleChange}
           />
         </div>
-        <div className="flex flex-col space-y-2">
+        {/* <div className="flex flex-col space-y-2">
           <label htmlFor="status">Status</label>
           <select
             name="status"
@@ -85,11 +88,11 @@ const TicketForm = ({ params }) => {
             value={formData.status}
             onChange={handleChange}
           >
-            <option value="not-started">Not Started</option>
-            <option value="in-progress">In Progress</option>
-            <option value="completed">Completed</option>
+            <option value="Not Started">Not Started</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Completed">Completed</option>
           </select>
-        </div>
+        </div> */}
         <div className="flex flex-col space-y-2">
           <label htmlFor="priority">Priority</label>
           <select
@@ -99,9 +102,9 @@ const TicketForm = ({ params }) => {
             value={formData.priority}
             onChange={handleChange}
           >
-            <option value="low">Low</option>
-            <option value="medium">Medium</option>
-            <option value="high">High</option>
+            <option value="Low">Low</option>
+            <option value="Medium">Medium</option>
+            <option value="High">High</option>
           </select>
         </div>
         {/* <div className="flex flex-col space-y-2">
