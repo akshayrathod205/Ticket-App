@@ -1,9 +1,10 @@
 "use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import axios from "axios";
 
-const TicketForm = ({ params }) => {
+const TicketForm = ({ ticket }) => {
+  const editMode = ticket._id === "new" ? false : true;
+
   const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
@@ -14,6 +15,10 @@ const TicketForm = ({ params }) => {
     assignedTo: "",
     createdBy: "Akshay",
   });
+
+  if (editMode) {
+    console.log(ticket);
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -45,6 +50,7 @@ const TicketForm = ({ params }) => {
   return (
     <form onSubmit={handleSubmit}>
       <div className="flex flex-col space-y-4">
+        <h3 className="self-center text-2xl font-semibold">Create</h3>
         <div className="flex flex-col space-y-2">
           <label htmlFor="title">Title</label>
           <input
