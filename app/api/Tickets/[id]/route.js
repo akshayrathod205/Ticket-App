@@ -5,7 +5,7 @@ export async function GET(req, { params }) {
   try {
     const { id } = params;
     const ticket = await Ticket.findOne({ _id: id });
-    return NextResponse.json(ticket, { status: 200 });
+    return NextResponse.json({ ticket }, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
@@ -19,7 +19,7 @@ export async function PUT(req, { params }) {
     const updatedTicket = await Ticket.findByIdAndUpdate(id, ticketData, {
       new: true,
     });
-    return NextResponse.json(updatedTicket, { status: 200 });
+    return NextResponse.json({updatedTicket}, { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: error.message }, { status: 500 });
   }
